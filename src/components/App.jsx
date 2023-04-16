@@ -5,13 +5,9 @@ import ContactForm from './ContactForm/ContactForm';
 import Filter from './Filter/Filter';
 
 export class App extends Component {
-  // initialContacts = localStorage.getItem('contacts')
-  //   ? JSON.parse(localStorage.getItem('contacts'))
-  //   : [];
   state = {
     contacts: [],
     filter: '',
-    showModals: false,
   };
 
   submitContactForm = ({ name, number }) => {
@@ -55,12 +51,6 @@ export class App extends Component {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
   }
-  // ========================
-  toggleModal = () => {
-    this.setState({ showModals: !this.state.showModals });
-  };
-  // =======================
-  //===========================================
   render() {
     return (
       <>
