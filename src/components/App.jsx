@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import ContactList from 'components/ContactList/ContactList';
 import ContactForm from './ContactForm/ContactForm';
 import Filter from './Filter/Filter';
-import Modal from './Modal/Modal';
 
 export class App extends Component {
   // initialContacts = localStorage.getItem('contacts')
@@ -46,14 +45,12 @@ export class App extends Component {
   };
   // =================================
   componentDidMount() {
-    console.log('ComponentDidMount');
     const contacts = localStorage.getItem('contacts');
     if (contacts) {
       this.setState({ contacts: JSON.parse(contacts) });
     }
   }
   componentDidUpdate(prevProps, prevState) {
-    console.log('ComponentDidUpdate');
     if (this.state.contacts !== prevState.contacts) {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
@@ -67,26 +64,6 @@ export class App extends Component {
   render() {
     return (
       <>
-        {/* <button type="button" onClick={this.toggleModal}>
-          Open Modal
-        </button> */}
-        <div>
-          {this.state.showModals && (
-            <Modal closeModalWindow={this.toggleModal}>
-              <h1>Hi. It is Modal window</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Ducimus dolore quisquam a temporibus ipsum iure exercitationem
-                qui! Optio omnis pariatur facere accusantium sapiente culpa
-                veniam.
-              </p>
-              <button type="button" onClick={this.toggleModal}>
-                Close modal
-              </button>
-            </Modal>
-          )}
-        </div>
-
         <div>
           <h1>Phonebook</h1>
           <ContactForm onSubmit={values => this.submitContactForm(values)} />

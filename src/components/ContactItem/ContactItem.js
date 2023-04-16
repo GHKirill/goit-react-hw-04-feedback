@@ -22,6 +22,6 @@ export default function ContactItem({ name, number, onButtonDeleteClick }) {
 
 ContactItem.propTypes = {
   name: PropTypes.string.isRequired,
-  number: PropTypes.number.isRequired,
+  number: PropTypes.string.isRequired,
   onButtonDeleteClick: PropTypes.func,
 };
