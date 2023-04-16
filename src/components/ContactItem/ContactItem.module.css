@@ -1,0 +1,12 @@
+.contactItem {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+}
+.contactName {
+  font-weight: 500;
+}
+.contactNumber {
+  font-weight: 500;
+  color: rgb(89, 87, 87);
+}
