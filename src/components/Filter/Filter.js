@@ -5,7 +5,8 @@ import css from './Filter.module.css';
 
 export default function Filter({ value, filter }) {
   const handleFilter = event => {
-    filter({ filter: event.currentTarget.value });
+    // filter({ filter: event.currentTarget.value });
+    filter(event.currentTarget.value);
   };
 
   const idFilter = nanoid();
